@@ -1,0 +1,7 @@
+.form-item {
+    display: none;
+}
+
+.form-item.active {
+    display: block;
+}

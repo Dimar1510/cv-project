@@ -1,29 +1,50 @@
-import React, { useState } from 'react';
-import './App.css'
+import React, { useRef, useState } from 'react';
+import './styles/App.css'
+import './styles/buttons.css'
 import FormWrapper from './components/FormWrapper';
 import ResumeWrapper from './components/ResumeWrapper';
+import { useReactToPrint } from 'react-to-print'
+
+import { defaultEducations, defaultPersonal, defaultProfessions } from './components/DefaultData'
 
 function App() {
 
-const [personal, setPersonal] = useState({
-  name: '',
-  email: '',
-  phone: '',
-  address: ''
-})
+  const [educationItem, setEducationItem] = useState({
+    school: '',
+    degree: '',
+    start: '',
+    end: '',
+    location: ''
+  })
 
-const [educations, setEducations] = useState([])
+  const [professionItem, setProfessionItem] = useState({
+    company: '',
+    position: '',
+    start: '',
+    end: '',
+    location: '',
+    description: ''
+  })
 
-const [educationItem, setEducationItem] = useState({
-  school: '',
-  degree: '',
-  start: '',
-  end: '',
-  location: ''
-})
+  const [personal, setPersonal] = useState(defaultPersonal)
+  const [educations, setEducations] = useState(defaultEducations)
+  const [professions, setProfessions] = useState(defaultProfessions)
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
 
-
+  function clearAll() {
+      let newPersonal = {}
+      Object.keys(personal).map(item => {
+              newPersonal[item] = ''
+          })
+      setPersonal(newPersonal)
+      setProfessions([])
+      setEducations([])
+  }
 
   return (
     <>
@@ -31,12 +52,23 @@ const [educationItem, setEducationItem] = useState({
         personal = {personal} 
         setPersonal = {setPersonal}
         educations = {educations}
-        educationItem = {educationItem}
         setEducations = {setEducations}
+        educationItem = {educationItem}
         setEducationItem = {setEducationItem}
+        professionItem = {professionItem}
+        setProfessionItem = {setProfessionItem}
+        professions = {professions}
+        setProfessions = {setProfessions}
+        handlePrint = {handlePrint}
+        clearAll = {clearAll}
       />
-
-      <ResumeWrapper personal = {personal} educations = {educations}/>
+      
+      <ResumeWrapper 
+        ref={componentRef}
+        personal = {personal} 
+        educations = {educations}
+        professions = {professions}
+      />
     </>
   )
 }

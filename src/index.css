@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+}
+
+:root {
+  --clr-dark: #d6e6e6;
+  --clr-accent: #003C43;
+  --clr-light: white;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--clr-dark);
 
 }
+
+button, input {
+  font-family: inherit;
+}
+

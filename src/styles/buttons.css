@@ -1,0 +1,71 @@
+button {
+    transition: 0.3s ease;
+    background: none;
+}
+
+button:focus {
+    scale: 1.1;
+}
+
+.btn-delete {
+    height: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--clr-dark);
+    transition: 0.3s ease;
+    display: flex;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-delete:hover {
+    color: var(--clr-light);
+    background-color: rgb(154, 85, 85);
+}
+
+.buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    
+}
+
+.btn-save:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+}
+
+.btn-cancel:hover {
+    background-color: var(--clr-dark);
+}
+
+.btn-add {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: var(--clr-dark);
+}
+
+.util-buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.util-buttons button:hover {
+    background-color: var(--clr-dark);
+}

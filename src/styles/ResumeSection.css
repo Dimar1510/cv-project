@@ -1,0 +1,37 @@
+.resume-list {
+    padding: 2rem 3rem;
+}
+
+.resume-list h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: var(--clr-dark);
+    padding: 0.5rem 0;
+    color: var(--clr-accent);
+}
+
+.education-item > ul{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto auto;
+    gap: 0.25rem;
+}
+
+.school, .company {
+    font-weight: 600;
+}
+
+.profession-item > ul{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.25rem;
+}
+
+
+.description {
+    grid-column: 2/3;
+}
+
+
+

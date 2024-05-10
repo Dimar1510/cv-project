@@ -1,15 +1,14 @@
 import React from 'react';
+import FormInput from './FormInput';
 
 function FormEducationItem(props) {
 
     function formReset() {
-        props.setEducationItem({  
-            school: '',
-            degree: '',
-            start: '',
-            end: '',
-            location: ''
-    })
+        let newState = {}
+        Object.keys(props.educationItem).map(item => {
+                newState[item] = ''
+            })
+        props.setEducationItem(newState)  
     }
 
     const onCancelHandler = () => {
@@ -17,7 +16,7 @@ function FormEducationItem(props) {
         formReset()
     }
 
-    const onEditHandler = () => {
+    const editItem = () => {
         const newEducations = props.educations.map(element => {
             const item = props.educationItem
             if (element.id !== item.id) return element
@@ -33,8 +32,7 @@ function FormEducationItem(props) {
         props.setEducations(newEducations)
     }
 
-    
-    const onAddHandler = () => {
+    const addItem = () => {
         props.setEducations([...props.educations, {...props.educationItem,
         id: crypto.randomUUID()
         }])
@@ -42,72 +40,63 @@ function FormEducationItem(props) {
 
     const onSaveHandler = () => {
         props.edit 
-        ? onEditHandler()
-        : onAddHandler()
+        ? editItem()
+        : addItem()
         props.setActive(false)
         formReset()
     }
 
-    
+    const inputs = [
+        {
+            name: 'School',
+            id: 'school',
+            type: 'text',
+            value: props.educationItem.school,
+            function: e => props.setEducationItem({...props.educationItem, school: e.target.value}) 
+        }, 
+        {
+            name: 'Degree',
+            id: 'degree',
+            type: 'text',
+            value: props.educationItem.degree,
+            function: e => props.setEducationItem({...props.educationItem, degree: e.target.value}) 
+        }, 
+        {
+            name: 'Start Date',
+            id: 'school_start',
+            type: 'text',
+            value: props.educationItem.start,
+            function: e => props.setEducationItem({...props.educationItem, start: e.target.value}) 
+        }, 
+        {
+            name: 'End Date',
+            id: 'school_end',
+            type: 'text',
+            value: props.educationItem.end,
+            function: e => props.setEducationItem({...props.educationItem, end: e.target.value}) 
+        }, 
+        {
+            name: 'Location',
+            id: 'school_location',
+            type: 'text',
+            value: props.educationItem.location,
+            function: e => props.setEducationItem({...props.educationItem, location: e.target.value}) 
+        }, 
+    ]
 
     return (  
         <div className={props.active ? 'active form-item' : 'form-item'}>
-            <ul>
-                <h4>{props.edit && 'Edit'}</h4>
-                <li className="input-field">
-                    <label htmlFor="school">School</label>
-                    <input 
-                        type="text" 
-                        name="school" 
-                        id="school"
-                        value={props.educationItem.school}
-                        onChange={e => props.setEducationItem({...props.educationItem, school: e.target.value})} 
-                    />
-                    
-                </li>
-                <li className="input-field">
-                    <label htmlFor="degree">Degree</label>
-                    <input 
-                        type="text" 
-                        name="degree" 
-                        id="degree"
-                        value={props.educationItem.degree} 
-                        onChange={e => props.setEducationItem({...props.educationItem, degree: e.target.value})} 
-                    />
-                </li>
-                <li className="input-field">
-                    <label htmlFor="school_start">Start date</label>
-                    <input 
-                        type="text" 
-                        name="school_start" 
-                        id="school_start"
-                        value={props.educationItem.start}
-                        onChange={e => props.setEducationItem({...props.educationItem, start: e.target.value})}  
-                    />
-                </li>
-                <li className="input-field">
-                    <label htmlFor="school_end">End date</label>
-                    <input 
-                        type="text" 
-                        name="school_end" 
-                        id="school_end" 
-                        value={props.educationItem.end}
-                        onChange={e => props.setEducationItem({...props.educationItem, end: e.target.value})} 
-                    />
-                </li>
-                <li className="input-field">
-                    <label htmlFor="school_location">Location</label>
-                    <input 
-                        type="text" 
-                        name="school_location" 
-                        id="school_location" 
-                        value={props.educationItem.location}
-                        onChange={e => props.setEducationItem({...props.educationItem, location: e.target.value})} 
-                    />
-                </li>
+            <ul className='input-list'>
+                <h4>{props.edit && 'Edit item'}</h4>
+                {inputs.map(item => {
+                    return <FormInput {...item} key = {item.id}/>
+                })}
             </ul>
-            <button onClick={onCancelHandler}>Cancel</button>
-            <button onClick={onSaveHandler}>Save</button>
+            <div className="buttons">
+                <button className="btn-cancel" onClick={onCancelHandler}>Cancel</button>
+                <button className="btn-save" onClick={onSaveHandler}>Save</button>
+            </div>
+
         </div>
     );
 }

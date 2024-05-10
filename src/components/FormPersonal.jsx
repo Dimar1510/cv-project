@@ -3,15 +3,16 @@ import React from 'react';
 function FormPersonal(props) {
 
     return (  
-        <div className='form-personal'>
+        <div className='form-section'>
             <h2>Personal Details</h2>
-            <ul>
+            <ul className='input-list'>
                 <li className="input-field">
                     <label htmlFor="name">Full Name</label>
                     <input 
                         type="text" 
                         name="name" 
                         id="name"
+                        value={props.personal.name}
                         onChange={e => props.onChange({...props.personal, name: e.target.value})}
                     />
                 </li>
@@ -21,6 +22,7 @@ function FormPersonal(props) {
                         type="email" 
                         name="email" 
                         id="email" 
+                        value={props.personal.email}
                         onChange={e => props.onChange({...props.personal, email: e.target.value})}
                     />
                 </li>
@@ -30,6 +32,7 @@ function FormPersonal(props) {
                         type="tel" 
                         name="phone" 
                         id="phone" 
+                        value={props.personal.phone}
                         onChange={e => props.onChange({...props.personal, phone: e.target.value})}
                     />
                 </li>
@@ -39,6 +42,7 @@ function FormPersonal(props) {
                         type="text" 
                         name="adress"
                         id="adress" 
+                        value={props.personal.address}
                         onChange={e => props.onChange({...props.personal, address: e.target.value})}
                     />
                 </li>

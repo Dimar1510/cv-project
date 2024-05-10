@@ -1,0 +1,12 @@
+.resume-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-light);
+
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

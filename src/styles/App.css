@@ -1,0 +1,17 @@
+#root {
+    display: grid;
+    min-width: 300px;
+    max-width: 1200px;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+@media (max-width: 1000px) {
+    #root {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+
+

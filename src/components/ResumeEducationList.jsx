@@ -1,10 +1,11 @@
 import React from 'react';
 import ResumeEducationItem from './ResumeEducationItem';
+import '../styles/ResumeSection.css'
 
 function ResumeEducationList(props) {
-
+    if (props.educations.length !==0) 
     return (  
-        <div className="resume-list">
+        <section className="resume-list">
             <h2>Education</h2>
             {props.educations.map(item => {
                 return (
@@ -12,7 +13,7 @@ function ResumeEducationList(props) {
                 )
             })}
             
-        </div>
+        </section>
     );
 }
 

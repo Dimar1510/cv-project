@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import FormEducationItem from './FormEducationItem';
+import FormProfessionItem from './FormProfessionItem';
 import { mdilDelete } from '@mdi/light-js';
-import { mdiSchoolOutline } from '@mdi/js';
 import Icon from '@mdi/react';
+import { mdiBriefcaseOutline } from '@mdi/js';
 
-
-
-function FormEducationList(props) {
-
+function FormProfessionList(props) {
+    
     const [active, setActive] = useState(false)
     const [edit, setEdit] = useState(false)
 
@@ -17,26 +15,24 @@ function FormEducationList(props) {
     }
 
     function handleDelete(id){
-        props.setEducations(props.educations.filter(item => item.id !== id))
-        setEdit(false)
-        setActive(false)
+        props.setProfessions(props.professions.filter(item => item.id !== id))
     }
 
     function handleEdit(item) {
         setActive(true)
         setEdit(true)
-        props.setEducationItem({
+        props.setProfessionItem({
             ...item
         })
     }
 
-    return (
-        <div className='form-section'>
-            <h2><Icon path={mdiSchoolOutline} size={1} />Education</h2>
-            {props.educations.map(item => {
+    return (  
+        <div className="form-section">
+            <h2><Icon path={mdiBriefcaseOutline} size={1} />Experience</h2>
+            {props.professions.map(item => {
                 return (
                     <div className='form-item-header' onClick={() => handleEdit(item)} key={item.id}>
-                        <h3>{item.school}</h3>
+                        <h3>{item.company}</h3>
                         <button className='btn-delete' onClick={(e) => {
                             e.stopPropagation();
                             handleDelete(item.id)
@@ -46,11 +42,11 @@ function FormEducationList(props) {
                     </div>
                 )
             })}
-            <FormEducationItem {...props} edit = {edit} active = {active} setActive = {setActive}/>
+            <FormProfessionItem {...props} edit = {edit} active = {active} setActive = {setActive}/>
             {!active 
-            && <button className='btn-add' onClick={handleToggle}>Add education</button>}
-        </div>  
+            && <button className='btn-add' onClick={handleToggle}>Add expirience</button>}
+        </div>
     );
 }
 
-export default FormEducationList;
+export default FormProfessionList;

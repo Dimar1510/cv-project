@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormProfessionItem from './FormProfessionItem';
-import { mdilDelete } from '@mdi/light-js';
+import { mdilDelete, mdilPlus } from '@mdi/light-js';
 import Icon from '@mdi/react';
 import { mdiBriefcaseOutline } from '@mdi/js';
 
@@ -43,8 +43,11 @@ function FormProfessionList(props) {
                 )
             })}
             <FormProfessionItem {...props} edit = {edit} active = {active} setActive = {setActive}/>
-            {!active 
-            && <button className='btn-add' onClick={handleToggle}>Add expirience</button>}
+            {!active &&  
+                <button className='btn-add' onClick={handleToggle}>
+                    <Icon path={mdilPlus} size={1} />
+                    <span>Add Expirience</span>
+                </button>}
         </div>
     );
 }

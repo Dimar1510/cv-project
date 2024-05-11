@@ -41,6 +41,7 @@ function App() {
       Object.keys(personal).map(item => {
               newPersonal[item] = ''
           })
+      newPersonal.links = []
       setPersonal(newPersonal)
       setProfessions([])
       setEducations([])

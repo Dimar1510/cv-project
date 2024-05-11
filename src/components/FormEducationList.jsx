@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormEducationItem from './FormEducationItem';
-import { mdilDelete } from '@mdi/light-js';
+import { mdilDelete, mdilPlus } from '@mdi/light-js';
 import { mdiSchoolOutline } from '@mdi/js';
 import Icon from '@mdi/react';
 
@@ -48,7 +48,10 @@ function FormEducationList(props) {
             })}
             <FormEducationItem {...props} edit = {edit} active = {active} setActive = {setActive}/>
             {!active 
-            && <button className='btn-add' onClick={handleToggle}>Add education</button>}
+            && <button className='btn-add' onClick={handleToggle}>
+                <Icon path={mdilPlus} size={1} />
+                <span>Add Education</span>
+            </button>}
         </div>  
     );
 }

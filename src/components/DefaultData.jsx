@@ -1,8 +1,10 @@
 const defaultPersonal = {
-    name: 'Name LastName',
+    name: 'Name Lastname',
     email: 'notrealemail@email.com',
     phone: '1234567890',
-    address: 'Some City, Country'
+    address: 'Some City, Country',
+    speciality: 'React developer',
+    links: ['github.com/namelastname', 'linkedin.com/namelastname']
 }
 
 const defaultEducations = [

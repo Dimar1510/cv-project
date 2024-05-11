@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 *, *::before, *::after {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 :root {
-  --clr-dark: #d6e6e6;
+  --clr-dark: #e2e2e2;
   --clr-accent: #003C43;
   --clr-light: white;
 }
@@ -16,9 +16,9 @@
 body {
   display: flex;
   justify-content: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   background-color: var(--clr-dark);
-
+  font-weight: 300;
 }
 
 button, input {

@@ -3,8 +3,8 @@ button {
     background: none;
 }
 
-button:focus {
-    scale: 1.1;
+button:active {
+    scale: 1.05;
 }
 
 .btn-delete {
@@ -12,7 +12,6 @@ button:focus {
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: var(--clr-dark);
     transition: 0.3s ease;
     display: flex;
     padding: 0.25rem;
@@ -20,9 +19,12 @@ button:focus {
     align-items: center;
 }
 
-.btn-delete:hover {
-    color: var(--clr-light);
-    background-color: rgb(154, 85, 85);
+.btn-delete:hover,
+.btn-delete:active {
+    color: rgb(232, 0, 0);
+}
+.btn-delete:focus {
+    outline: auto;
 }
 
 .buttons button {
@@ -44,13 +46,22 @@ button:focus {
 }
 
 .btn-add {
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     border: 1px solid black;
     border-radius: 5px;
     width: fit-content;
     align-self: center;
     cursor: pointer;
     transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+
+}
+
+.btn-add span {
+    display: grid;
+    place-content: center;
+    padding-top: 0.2rem;
 }
 
 .btn-add:hover {

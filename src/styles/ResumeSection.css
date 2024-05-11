@@ -7,7 +7,6 @@
     font-size: 1.25rem;
     background-color: var(--clr-dark);
     padding: 0.5rem 0;
-    color: var(--clr-accent);
 }
 
 .education-item > ul{

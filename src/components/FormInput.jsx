@@ -11,7 +11,7 @@ function FormInput(props) {
                     id={props.id} 
                     value={props.value}
                     onChange={props.function}
-                    
+                    placeholder={props.placeholder}
                 /> 
         </li>
     );

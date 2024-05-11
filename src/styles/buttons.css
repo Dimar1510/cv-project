@@ -3,10 +3,6 @@ button {
     background: none;
 }
 
-button:active {
-    scale: 1.05;
-}
-
 .btn-delete {
     height: 100%;
     border: none;
@@ -78,5 +74,15 @@ button:active {
 }
 
 .util-buttons button:hover {
+    background-color: var(--clr-dark);
+}
+
+.btn-personal {
+    border-width: 0;
+    border-radius: 1rem;
+    font-size: auto;
+}
+
+.btn-personal:hover {
     background-color: var(--clr-dark);
 }

@@ -17,7 +17,6 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Josefin Sans", sans-serif;
-  background-color: var(--clr-dark);
   font-weight: 300;
 }
 

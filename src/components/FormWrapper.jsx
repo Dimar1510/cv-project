@@ -4,6 +4,7 @@ import FormEducationList from './FormEducationList';
 import FormProfessionList from './FormProfessionList';
 import SaveResume from './SaveResume';
 import '../styles/FormWrapper.css'
+import FormSkills from './FormSkills';
 
 function FormWrapper(props) {
 
@@ -22,7 +23,8 @@ function FormWrapper(props) {
                     setProfessions = {props.setProfessions}
                     professionItem = {props.professionItem}
                     setProfessionItem = {props.setProfessionItem}
-                /> 
+                />
+                <FormSkills personal = {props.personal} onChange = {props.setPersonal}/> 
             </div>
     );
 

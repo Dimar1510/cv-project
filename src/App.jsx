@@ -42,6 +42,7 @@ function App() {
               newPersonal[item] = ''
           })
       newPersonal.links = []
+      newPersonal.skills = []
       setPersonal(newPersonal)
       setProfessions([])
       setEducations([])

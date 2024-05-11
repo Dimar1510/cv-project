@@ -4,7 +4,9 @@ const defaultPersonal = {
     phone: '1234567890',
     address: 'Some City, Country',
     speciality: 'React developer',
-    links: ['github.com/namelastname', 'linkedin.com/namelastname']
+    about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iusto quae dolor obcaecati magnam numquam possimus hic maxime sequi minima dolor sit amet consectetur adipisicing elit. Veniam hic suscipit ratione eius ut reiciendis dolor ipsum, atque, animi qui architecto aliquid iste provident! Voluptatibus maiores rerum unde delectus at!',
+    links: ['github.com/namelastname', 'linkedin.com/namelastname'],
+    skills: ['React', 'JS', 'Git', 'Figma', 'CSS']
 }
 
 const defaultEducations = [

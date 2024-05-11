@@ -1,5 +1,5 @@
 .resume-list {
-    padding: 2rem 3rem;
+    padding: 1rem 3rem;
 }
 
 .resume-list h2 {
@@ -30,6 +30,12 @@
 
 .description {
     grid-column: 2/3;
+}
+
+.skill {
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 

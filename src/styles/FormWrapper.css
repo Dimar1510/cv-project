@@ -10,8 +10,9 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: var(--clr-light);
+    box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
 }
 
 .util-buttons {
@@ -20,10 +21,24 @@
     justify-content: space-around;
 }
 
+.form-personal .input-list {
+    display: none;
+}
+
+.form-personal .input-list.active {
+    display: flex;
+}
+
+.form-personal h2 {
+    justify-content: space-between;
+    cursor: pointer;
+}
+
 .form-section h2 {
     display: flex;
     gap: 0.25rem;
     align-items: center;
+
 }
 
 .input-list {
@@ -69,7 +84,16 @@
     background-color: var(--clr-dark);
 }
 
+.form-personal h2 svg {
+    transition: 0.2s ease;
+}
+
+.form-personal:has(.active) h2>svg{
+    transform: rotateZ(90deg);
+}
+
 h2 {
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -80,5 +104,9 @@ h3 {
 
 h4 {
     font-weight: 500;
+}
+
+h2 span {
+    display: flex;
 }
 

@@ -63,14 +63,6 @@ const FormProfessionItem: FC<IProps> = ({ item, setEditItem }) => {
       onChange: (e: ChangeEvent<HTMLInputElement>) =>
         setEditItem({ ...item, location: e.target.value }),
     },
-    {
-      name: "Description",
-      id: "description",
-      type: "text",
-      value: item.description,
-      onChange: (e: ChangeEvent<HTMLInputElement>) =>
-        setEditItem({ ...item, description: e.target.value }),
-    },
   ];
 
   if (item)
@@ -81,6 +73,16 @@ const FormProfessionItem: FC<IProps> = ({ item, setEditItem }) => {
           {inputs?.map((inputItem) => (
             <FormInput {...inputItem} key={inputItem.id} />
           ))}
+          <li className="input-field">
+            <label htmlFor="description">Description</label>
+            <textarea
+              id="description"
+              value={item.description}
+              onChange={(e) =>
+                setEditItem({ ...item, description: e.target.value })
+              }
+            />
+          </li>
         </ul>
         <div className="buttons">
           <button className="btn-cancel" onClick={() => setEditItem(null)}>

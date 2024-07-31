@@ -1,4 +1,3 @@
-import React from "react";
 import { selectPersonalDetails } from "src/app/personal.slice";
 import { useAppSelector } from "src/app/hooks";
 

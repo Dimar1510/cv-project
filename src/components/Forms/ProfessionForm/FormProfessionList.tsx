@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormProfessionItem from "./FormProfessionItem";
 import { mdilDelete, mdilPlus } from "@mdi/light-js";
-import { mdiSchoolOutline } from "@mdi/js";
+import { mdiChevronDown, mdiSchoolOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useAppSelector } from "src/app/hooks";
 import { selectProfession } from "src/app/profession.slice";
@@ -35,7 +35,10 @@ const FormProfessionList = () => {
           onClick={() => setEditItem(item)}
           key={item.id}
         >
-          <h3>{item.company}</h3>
+          <h3 className="form-item-text">
+            {item.company}
+            <Icon path={mdiChevronDown} size={1} />
+          </h3>
           <button
             className="btn-delete"
             onClick={(e) => {

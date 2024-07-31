@@ -3,19 +3,20 @@ import FormInput from "../FormInput";
 import { mdilChevronRight, mdilPlus } from "@mdi/light-js";
 import { mdiAccountOutline } from "@mdi/js";
 import Icon from "@mdi/react";
-import { useActions } from "../../../app/useActions";
-import {
-  selectLinks,
-  selectPersonalDetails,
-} from "../../../app/personal.slice";
-import { useAppSelector } from "../../../app/hooks";
+import { useActions } from "src/app/useActions";
+import { selectLinks, selectPersonalDetails } from "src/app/personal.slice";
+import { useAppSelector } from "src/app/hooks";
 
 const FormPersonal = () => {
   const { name, about, address, email, phone, specialty } = useAppSelector(
     selectPersonalDetails
   );
+
+  const [active, setActive] = useState(false);
+  const { addLink, editLink, removeLink } = useActions();
   const links = useAppSelector(selectLinks);
   const { editDetails } = useActions();
+
   const inputs = [
     {
       name: "Full Name",
@@ -54,8 +55,6 @@ const FormPersonal = () => {
     },
   ];
 
-  const [active, setActive] = useState(false);
-  const { addLink, editLink, removeLink } = useActions();
   const handleToggle = () => {
     setActive(!active);
   };
@@ -87,31 +86,29 @@ const FormPersonal = () => {
               }
             />
           </li>
-          {links.map((link, index) => {
-            return (
-              <li className="input-field" key={index}>
-                <label htmlFor={`link-${index}`}>Link {index + 1}</label>
-                <input
-                  type="text"
-                  placeholder="Additional link you might want to add"
-                  id={`link-${index}`}
-                  value={link}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    editLink({ value, index });
-                  }}
-                />
-                <button
-                  className="btn-delete"
-                  onClick={() => {
-                    removeLink(index);
-                  }}
-                >
-                  Remove link
-                </button>
-              </li>
-            );
-          })}
+          {links.map((link, index) => (
+            <li className="input-field" key={index}>
+              <label htmlFor={`link-${index}`}>Link {index + 1}</label>
+              <input
+                type="text"
+                placeholder="Additional link you might want to add"
+                id={`link-${index}`}
+                value={link}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  editLink({ value, index });
+                }}
+              />
+              <button
+                className="btn-delete"
+                onClick={() => {
+                  removeLink(index);
+                }}
+              >
+                Remove link
+              </button>
+            </li>
+          ))}
           <button
             className="btn-add"
             onClick={() => {

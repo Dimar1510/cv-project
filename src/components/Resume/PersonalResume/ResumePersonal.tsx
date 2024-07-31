@@ -22,18 +22,24 @@ const ResumePersonal = () => {
       </div>
 
       <div className="contact-info">
-        <span>
-          <Icon path={mdiMapMarkerOutline} size={1} />
-          {address}
-        </span>
-        <span>
-          <Icon path={mdiEmailOutline} size={1} />
-          {email}
-        </span>
-        <span>
-          <Icon path={mdiPhoneOutline} size={1} />
-          {phone}
-        </span>
+        {address && (
+          <span>
+            <Icon path={mdiMapMarkerOutline} size={1} />
+            {address}
+          </span>
+        )}
+        {email && (
+          <span>
+            <Icon path={mdiEmailOutline} size={1} />
+            {email}
+          </span>
+        )}
+        {phone && (
+          <span>
+            <Icon path={mdiPhoneOutline} size={1} />
+            {phone}
+          </span>
+        )}
         {links.map((link, index) => (
           <span key={index}>
             <Icon path={mdiWeb} size={1} />

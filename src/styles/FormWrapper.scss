@@ -87,6 +87,11 @@
   background-color: var(--clr-dark);
 }
 
+.form-item-text {
+  display: flex;
+  align-items: center;
+}
+
 .form-personal h2 svg {
   transition: 0.2s ease;
 }

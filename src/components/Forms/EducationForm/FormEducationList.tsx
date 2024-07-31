@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormEducationItem from "./FormEducationItem";
 import { mdilDelete, mdilPlus } from "@mdi/light-js";
-import { mdiSchoolOutline } from "@mdi/js";
+import { mdiChevronDown, mdiSchoolOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useAppSelector } from "src/app/hooks";
 import { selectEducation } from "src/app/education.slice";
@@ -34,7 +34,10 @@ const FormEducationList = () => {
           onClick={() => setEditItem(item)}
           key={item.id}
         >
-          <h3>{item.school}</h3>
+          <h3 className="form-item-text">
+            {item.school}
+            <Icon path={mdiChevronDown} size={1} />
+          </h3>
           <button
             className="btn-delete"
             onClick={(e) => {

@@ -1,6 +1,6 @@
 import "src/styles/FormInput.scss";
 import { useActions } from "src/app/useActions";
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, useEffect, useRef } from "react";
 import { IPersonalDetails } from "src/app/types";
 
 interface IFormInput {
@@ -21,10 +21,19 @@ const FormInput: FC<IFormInput> = ({
   onChange,
 }) => {
   const { editDetails } = useActions();
+  const ref = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const input = ref.current;
+    if (input?.id === "school" || input?.id === "company") {
+      input.focus();
+    }
+  }, []);
   return (
     <li className="input-field">
       <label htmlFor={id}>{name}</label>
       <input
+        maxLength={32}
+        ref={ref}
         type={type}
         id={id}
         value={value}

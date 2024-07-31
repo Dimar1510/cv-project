@@ -1,4 +1,3 @@
-import React from "react";
 import ResumeEducationItem from "./ResumeEducationItem";
 import { useAppSelector } from "src/app/hooks";
 import { selectEducation } from "src/app/education.slice";

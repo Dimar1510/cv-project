@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { clearAll, revertAll } from "src/app/useActions";
 import { mdiFileAccountOutline } from "@mdi/js";
 
-const SaveResume = ({
+const UtilitySection = ({
   handlePrint,
 }: {
   handlePrint: (
@@ -33,4 +33,4 @@ const SaveResume = ({
   );
 };
 
-export default SaveResume;
+export default UtilitySection;

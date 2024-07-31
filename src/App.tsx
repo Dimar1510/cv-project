@@ -13,7 +13,7 @@ import FormEducationList from "./components/Forms/EducationForm/FormEducationLis
 import FormProfessionList from "./components/Forms/ProfessionForm/FormProfessionList";
 import ResumeProfessionList from "./components/Resume/ProfessionResume/ResumeProfessionList";
 import { useReactToPrint } from "react-to-print";
-import SaveResume from "./components/Resume/SaveResume";
+import UtilitySection from "./components/UtilitySection/UtilitySection";
 
 function App() {
   const componentRef = useRef<HTMLDivElement>(null);
@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className="form-wrapper">
-        <SaveResume handlePrint={handlePrint} />
+        <UtilitySection handlePrint={handlePrint} />
         <FormPersonal />
         <FormEducationList />
         <FormProfessionList />

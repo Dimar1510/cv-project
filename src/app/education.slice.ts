@@ -24,7 +24,7 @@ export const educationSlice = createSlice({
         (item) => item.id === existItem.id
       );
       if (educationItem) {
-        for (let key in educationItem) {
+        for (const key in educationItem) {
           educationItem[key as keyof IEducation] =
             existItem[key as keyof IEducation];
         }

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC } from "react";
 import { IEducation } from "src/app/types";
 import FormInput from "../FormInput";
 import { useActions } from "src/app/useActions";

@@ -24,7 +24,7 @@ export const professionSlice = createSlice({
         (item) => item.id === existItem.id
       );
       if (professionItem) {
-        for (let key in professionItem) {
+        for (const key in professionItem) {
           professionItem[key as keyof IProfession] =
             existItem[key as keyof IProfession];
         }

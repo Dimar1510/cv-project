@@ -12,7 +12,7 @@ const FormSkills = () => {
     <div className="form-section skills">
       <h2>
         <Icon path={mdiAccountCogOutline} size={1} />
-        Skills
+        Key Skills
       </h2>
       {skills.map((skill, index) => {
         return (

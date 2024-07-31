@@ -1,6 +1,5 @@
 import React from "react";
 import ResumeEducationItem from "./ResumeEducationItem";
-import "src/styles/ResumeSection.css";
 import { useAppSelector } from "src/app/hooks";
 import { selectEducation } from "src/app/education.slice";
 

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useAppSelector } from "src/app/hooks";
 import { selectSkills } from "src/app/personal.slice";
 
@@ -8,7 +6,7 @@ const ResumeSkills = () => {
   if (skills.length > 0)
     return (
       <section className="resume-list">
-        <h2>Skills</h2>
+        <h2>Key Skills</h2>
         <div className="skills">
           {skills.map((skill, index) => {
             return (

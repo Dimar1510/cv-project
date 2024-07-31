@@ -1,4 +1,4 @@
-import "src/styles/ResumePersonal.css";
+import "src/styles/ResumePersonal.scss";
 import Icon from "@mdi/react";
 import {
   mdiEmailOutline,

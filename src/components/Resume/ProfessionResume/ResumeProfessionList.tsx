@@ -1,5 +1,4 @@
 import ResumeProfessionItem from "./ResumeProfessionItem";
-import "src/styles/ResumeSection.css";
 import { useAppSelector } from "src/app/hooks";
 import { selectProfession } from "src/app/profession.slice";
 

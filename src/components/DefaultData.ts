@@ -12,7 +12,7 @@ const defaultPersonal: IPersonal = {
   },
 
   links: ["github.com/namelastname", "linkedin.com/namelastname"],
-  skills: ["React", "JS", "Git", "Figma", "CSS"],
+  skills: ["TypeScript", "React", "Redux Toolkit", "SCSS", "Git", "Figma"],
 };
 
 const defaultEducations: IEducation[] = [

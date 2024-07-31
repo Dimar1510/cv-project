@@ -1,4 +1,4 @@
-import "src/styles/FormInput.css";
+import "src/styles/FormInput.scss";
 import { useActions } from "src/app/useActions";
 import { ChangeEvent, FC } from "react";
 import { IPersonalDetails } from "src/app/types";

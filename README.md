@@ -1,8 +1,32 @@
-# React + Vite
+# CV Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### **Description**
 
-Currently, two official plugins are available:
+Minimalistic CV generator made with React and Redux Toolkit that allows users to create professional-looking CV's with ease.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### 🔗 [Live preview](https://dimar-resume.netlify.app/)
+
+![Preview](public/resume.jpg)
+
+### **Features**
+
+- Set up your resume with personal details, received educations, relevant experience and key skills
+- Fill out the forms and the CV will be updated instantly
+- Print your finished CV or save it as PDF
+
+### **Built With**
+
+- React
+- Redux Toolkit
+- TypeScript
+- SCSS
+- Vite
+
+### Installing and running
+
+```bash
+git clone https://github.com/Dimar1510/cv-project.git
+cd cv-project
+npm install
+npm run dev
+```

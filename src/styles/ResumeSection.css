@@ -1,42 +1,39 @@
 .resume-list {
-    padding: 1rem 3rem;
+  padding: 1rem 3rem;
 }
 
 .resume-list h2 {
-    text-align: center;
-    font-size: 1.25rem;
-    background-color: var(--clr-dark);
-    padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: var(--clr-dark);
+  padding: 0.5rem 0;
 }
 
-.education-item > ul{
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto auto;
-    gap: 0.25rem;
+.education-item > ul {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 0.25rem;
 }
 
-.school, .company {
-    font-weight: 600;
+.school,
+.company {
+  font-weight: 600;
 }
 
-.profession-item > ul{
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto auto auto;
-    gap: 0.25rem;
+.profession-item > ul {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto auto auto;
+  gap: 0.25rem;
 }
-
 
 .description {
-    grid-column: 2/3;
+  grid-column: 2/3;
 }
 
 .skill {
-    border: 1px solid black;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
-
-
-

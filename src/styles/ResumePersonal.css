@@ -1,42 +1,40 @@
 .personal-section {
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: center;
-    align-items: center;
-    background-color: var(--clr-accent);
-    color: var(--clr-light);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
 }
 
 .personal-info {
-    align-self:baseline;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-transform: uppercase;
+  align-self: baseline;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-transform: uppercase;
 }
 
 .name {
-    letter-spacing: 0.25rem;
+  letter-spacing: 0.25rem;
 }
 
 .speciality {
-    font-size: 1rem;
-    color: var(--clr-dark);
+  font-size: 1rem;
+  color: var(--clr-dark);
 }
 
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .contact-info span {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
-
-

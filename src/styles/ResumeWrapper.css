@@ -1,20 +1,20 @@
 .resume-wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--clr-light);
-    border: rgba(0, 0, 0, 0.2) 1px solid;
-    border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-light);
+  border: rgba(0, 0, 0, 0.2) 1px solid;
+  border-bottom: none;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
 }

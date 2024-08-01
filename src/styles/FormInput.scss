@@ -1,3 +1,5 @@
+@import "./vars.scss";
+
 .input-field {
   display: grid;
   grid-template-columns: auto auto;
@@ -15,7 +17,7 @@ textarea {
   padding: 0.5rem;
   border: none;
   border-radius: 0.5rem;
-  background: var(--clr-dark);
+  background: $clr-dark;
   margin-inline: 0.25rem;
   flex: 1;
 }

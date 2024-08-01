@@ -1,7 +1,9 @@
+@import "./vars.scss";
+
 .resume-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: var(--clr-light);
+  background-color: $clr-light;
   border: rgba(0, 0, 0, 0.2) 1px solid;
   border-bottom: none;
 }
@@ -20,7 +22,7 @@ section {
 }
 
 .resume-list {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
 }
 
 @media (max-width: 760px) {
@@ -32,7 +34,7 @@ section {
 .resume-list h2 {
   text-align: center;
   font-size: 1.25rem;
-  background-color: var(--clr-dark);
+  background-color: $clr-dark;
   padding: 0.5rem 0;
 }
 
@@ -55,11 +57,17 @@ section {
   gap: 0.25rem;
 }
 
+.position,
+.degree {
+  font-weight: bolder;
+}
+
 .description {
   grid-column: 2/3;
+  font-size: smaller;
 }
 
 .skill {
-  background-color: var(--clr-dark);
+  background-color: $clr-dark;
   padding: 0.35rem;
 }

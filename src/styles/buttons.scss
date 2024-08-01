@@ -1,3 +1,5 @@
+@import "./vars.scss";
+
 button {
   transition: 0.3s ease;
   background: none;
@@ -32,12 +34,12 @@ button {
 }
 
 .btn-save:hover {
-  background-color: var(--clr-accent);
-  color: var(--clr-light);
+  background-color: $clr-accent;
+  color: $clr-light;
 }
 
 .btn-cancel:hover {
-  background-color: var(--clr-dark);
+  background-color: $clr-dark;
 }
 
 .btn-add {
@@ -59,7 +61,7 @@ button {
 }
 
 .btn-add:hover {
-  background-color: var(--clr-dark);
+  background-color: $clr-dark;
 }
 
 .util-buttons button {
@@ -72,7 +74,7 @@ button {
 }
 
 .util-buttons button:hover {
-  background-color: var(--clr-dark);
+  background-color: $clr-dark;
 }
 
 .btn-personal {
@@ -82,5 +84,5 @@ button {
 }
 
 .btn-personal:hover {
-  background-color: var(--clr-dark);
+  background-color: $clr-dark;
 }

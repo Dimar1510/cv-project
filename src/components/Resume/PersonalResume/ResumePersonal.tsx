@@ -24,25 +24,25 @@ const ResumePersonal = () => {
       <div className="contact-info">
         {address && (
           <span>
-            <Icon path={mdiMapMarkerOutline} size={1} />
+            <Icon path={mdiMapMarkerOutline} size={0.75} />
             {address}
           </span>
         )}
         {email && (
           <span>
-            <Icon path={mdiEmailOutline} size={1} />
+            <Icon path={mdiEmailOutline} size={0.75} />
             {email}
           </span>
         )}
         {phone && (
           <span>
-            <Icon path={mdiPhoneOutline} size={1} />
+            <Icon path={mdiPhoneOutline} size={0.75} />
             {phone}
           </span>
         )}
         {links.map((link, index) => (
           <span key={index}>
-            <Icon path={mdiWeb} size={1} />
+            <Icon path={mdiWeb} size={0.75} />
             {link}
           </span>
         ))}

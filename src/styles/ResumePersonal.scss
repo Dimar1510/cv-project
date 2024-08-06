@@ -8,6 +8,14 @@
   align-items: center;
   background-color: $clr-accent;
   color: $clr-light;
+
+  a {
+    color: $clr-light;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-underline-offset: 4px;
+  }
 }
 
 .personal-info {

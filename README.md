@@ -13,6 +13,7 @@ Minimalistic CV generator made with React and Redux Toolkit that allows users to
 - Set up your resume with personal details, received educations, relevant experience and key skills
 - Fill out the forms and the CV will be updated instantly
 - Print your finished CV or save it as PDF
+- Export your CV and import it to other devices
 
 ### **Built With**
 

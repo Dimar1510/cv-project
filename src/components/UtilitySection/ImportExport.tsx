@@ -1,7 +1,7 @@
 import Icon from "@mdi/react";
 import { mdilDelete, mdilPrinter } from "@mdi/light-js";
 import { useDispatch } from "react-redux";
-import { mdiClose, mdiFileAccountOutline } from "@mdi/js";
+import { mdiClose, mdiExport, mdiFileAccountOutline, mdiImport } from "@mdi/js";
 import { IResume } from "src/app/types";
 import { useAppSelector } from "src/app/hooks";
 import { selectAllPersonal } from "src/app/personal.slice";
@@ -9,6 +9,7 @@ import { selectEducation } from "src/app/education.slice";
 import { selectProfession } from "src/app/profession.slice";
 import { useEffect, useRef, useState } from "react";
 import { importAll } from "src/app/useActions";
+import cryptoJS from "crypto-js";
 import "src/styles/dialog.scss";
 
 const ImportExport = () => {
@@ -22,6 +23,8 @@ const ImportExport = () => {
   const personal = useAppSelector(selectAllPersonal);
   const education = useAppSelector(selectEducation);
   const profession = useAppSelector(selectProfession);
+
+  const SECRET_KEY = import.meta.env.VITE_SECRET_KEY || "secret_key";
 
   useEffect(() => {
     const closeOnOutsideClick = (e: MouseEvent) => {
@@ -46,14 +49,19 @@ const ImportExport = () => {
     setError("");
     setShowImport(false);
     const myResume: IResume = { personal, education, profession };
-    setResume(JSON.stringify(myResume));
+    const cipherResume = cryptoJS.AES.encrypt(
+      JSON.stringify(myResume),
+      SECRET_KEY
+    );
+    setResume(cipherResume.toString());
     dialogRef.current?.showModal();
   };
 
   const handleImport = async () => {
     if (resume.trim() === "") return;
     try {
-      const newResume: IResume = JSON.parse(resume);
+      const bytes = cryptoJS.AES.decrypt(resume.trim(), SECRET_KEY);
+      const newResume: IResume = JSON.parse(bytes.toString(cryptoJS.enc.Utf8));
       dispatch(importAll(newResume));
       dialogRef.current?.close();
     } catch (error) {
@@ -75,7 +83,7 @@ const ImportExport = () => {
     if (textareaRef.current)
       navigator.clipboard.writeText(textareaRef.current.value);
     if (copyBtnRef.current) {
-      copyBtnRef.current.textContent = "Copied!";
+      copyBtnRef.current.textContent = "✔ Copied!";
       await timeout(2000);
       copyBtnRef.current.textContent = "Copy";
     }
@@ -87,18 +95,17 @@ const ImportExport = () => {
 
   return (
     <>
-      <div className="form-section utils">
-        <div className="util-buttons">
-          <button className="import" onClick={handleShowImport}>
-            <Icon path={mdilPrinter} size={1} />
-            Import
-          </button>
-          <button className="export" onClick={handleExport}>
-            <Icon path={mdiFileAccountOutline} size={1} />
-            Export
-          </button>
-        </div>
+      <div className="util-buttons">
+        <button className="import" onClick={handleShowImport}>
+          <Icon path={mdiImport} size={1} />
+          Import
+        </button>
+        <button className="export" onClick={handleExport}>
+          <Icon path={mdiExport} size={1} />
+          Export
+        </button>
       </div>
+
       <dialog ref={dialogRef} className="dialog">
         <button
           onClick={() => dialogRef.current?.close()}
@@ -111,11 +118,16 @@ const ImportExport = () => {
         </h2>
 
         <p className="subtitle">
-          {showImport
-            ? "Paste the code that was given to you on resume export."
-            : "This is your resume code. You can copy it and send to other people for them to import it."}
+          {showImport ? (
+            "Paste the code that was given to you on resume export."
+          ) : (
+            <>
+              This is your resume code, copy it and save on your device.
+              <br />
+              Or send it to other people for them to import it.
+            </>
+          )}
         </p>
-
         <textarea
           ref={textareaRef}
           className="field"
@@ -131,7 +143,7 @@ const ImportExport = () => {
           {showImport ? (
             <button onClick={handleImport}>Import</button>
           ) : (
-            <button ref={copyBtnRef} onClick={handleCopy} style={{ width: 80 }}>
+            <button ref={copyBtnRef} onClick={handleCopy}>
               Copy
             </button>
           )}

@@ -31,3 +31,9 @@ export interface IProfession {
   location: string;
   description: string;
 }
+
+export interface IResume {
+  personal: IPersonal;
+  education: IEducation[];
+  profession: IProfession[];
+}

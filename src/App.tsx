@@ -14,6 +14,7 @@ import UtilitySection from "./components/UtilitySection/UtilitySection";
 import "./styles/buttons.scss";
 import "./styles/FormWrapper.scss";
 import "./styles/ResumeWrapper.scss";
+import ImportExport from "./components/UtilitySection/ImportExport";
 
 const App = () => {
   const componentRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,7 @@ const App = () => {
     <>
       <div className="form-wrapper">
         <UtilitySection handlePrint={handlePrint} />
+        <ImportExport />
         <FormPersonal />
         <FormEducationList />
         <FormProfessionList />

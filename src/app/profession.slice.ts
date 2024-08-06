@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { defaultProfessions } from "../components/DefaultData";
-import { IProfession } from "./types";
-import { clearAll, revertAll } from "./useActions";
+import { IProfession, IResume } from "./types";
+import { clearAll, importAll, revertAll } from "./useActions";
 
 const initialState = {
   profession: defaultProfessions,
@@ -41,7 +41,10 @@ export const professionSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(revertAll, () => initialState)
-      .addCase(clearAll, () => clearState),
+      .addCase(clearAll, () => clearState)
+      .addCase(importAll.type, (state, action: PayloadAction<IResume>) => {
+        state.profession = action.payload.profession;
+      }),
 });
 
 export const professionReducer = professionSlice.reducer;

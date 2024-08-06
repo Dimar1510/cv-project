@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { defaultEducations } from "../components/DefaultData";
-import { IEducation } from "./types";
-import { clearAll, revertAll } from "./useActions";
+import { IEducation, IProfession, IResume } from "./types";
+import { clearAll, importAll, revertAll } from "./useActions";
 
 const initialState = {
   education: defaultEducations,
@@ -41,7 +41,10 @@ export const educationSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(revertAll, () => initialState)
-      .addCase(clearAll, () => clearState),
+      .addCase(clearAll, () => clearState)
+      .addCase(importAll.type, (state, action: PayloadAction<IResume>) => {
+        state.education = action.payload.education;
+      }),
 });
 
 export const educationReducer = educationSlice.reducer;

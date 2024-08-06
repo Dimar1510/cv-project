@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { defaultPersonal } from "../components/DefaultData";
-import { IPersonal, IPersonalDetails } from "./types";
-import { clearAll, revertAll } from "./useActions";
+import { IPersonal, IPersonalDetails, IResume } from "./types";
+import { clearAll, importAll, revertAll } from "./useActions";
 
 const initialState = {
   personal: defaultPersonal,
@@ -70,14 +70,22 @@ export const personalSlice = createSlice({
     selectPersonalDetails: (state) => state.personal.details,
     selectSkills: (state) => state.personal.skills,
     selectLinks: (state) => state.personal.links,
+    selectAllPersonal: (state) => state.personal,
   },
   extraReducers: (builder) =>
     builder
       .addCase(revertAll, () => initialState)
-      .addCase(clearAll, () => clearState),
+      .addCase(clearAll, () => clearState)
+      .addCase(importAll.type, (state, action: PayloadAction<IResume>) => {
+        state.personal = action.payload.personal;
+      }),
 });
 
 export const personalReducer = personalSlice.reducer;
 export const personalActions = personalSlice.actions;
-export const { selectSkills, selectLinks, selectPersonalDetails } =
-  personalSlice.selectors;
+export const {
+  selectSkills,
+  selectLinks,
+  selectPersonalDetails,
+  selectAllPersonal,
+} = personalSlice.selectors;

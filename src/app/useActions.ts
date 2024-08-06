@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { personalActions } from "./personal.slice";
 import { educationActions } from "./education.slice";
 import { professionActions } from "./profession.slice";
+import { IResume } from "./types";
 
 const allActions = {
   ...personalActions,
@@ -17,3 +18,4 @@ export const useActions = () => {
 
 export const revertAll = createAction("REVERT_ALL");
 export const clearAll = createAction("CLEAR_ALL");
+export const importAll = createAction<IResume>("IMPORT_ALL");

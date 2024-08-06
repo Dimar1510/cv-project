@@ -15,19 +15,24 @@ import "./styles/buttons.scss";
 import "./styles/FormWrapper.scss";
 import "./styles/ResumeWrapper.scss";
 import ImportExport from "./components/UtilitySection/ImportExport";
+import { useAppSelector } from "./app/hooks";
+import { selectPersonalDetails } from "./app/personal.slice";
 
 const App = () => {
   const componentRef = useRef<HTMLDivElement>(null);
-
+  const { name } = useAppSelector(selectPersonalDetails);
   const handlePrint = useReactToPrint({
+    documentTitle: `${name.split(" ").join("_")}_CV`,
     content: () => componentRef.current,
   });
 
   return (
     <>
       <div className="form-wrapper">
-        <UtilitySection handlePrint={handlePrint} />
-        <ImportExport />
+        <div className="form-section utils">
+          <UtilitySection handlePrint={handlePrint} />
+          <ImportExport />
+        </div>
         <FormPersonal />
         <FormEducationList />
         <FormProfessionList />

@@ -41,10 +41,19 @@ const ResumePersonal = () => {
           </span>
         )}
         {links.map((link, index) => (
-          <span key={index}>
+          <a
+            key={index}
+            href={
+              link.startsWith("https://") || link.startsWith("http://")
+                ? link
+                : "http://" + link
+            }
+            target="_blank"
+            referrerPolicy="no-referrer"
+          >
             <Icon path={mdiWeb} size={0.75} />
             {link}
-          </span>
+          </a>
         ))}
       </div>
     </section>

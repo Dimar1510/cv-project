@@ -28,6 +28,12 @@
   }
 }
 
+@media (max-width: 740px) {
+  #root {
+    grid-template-columns: 1fr;
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
